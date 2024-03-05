@@ -1,0 +1,96 @@
+
+/* home.html */
+
+body {
+    background-color: black;
+    margin:0px;
+    font-family: 'Noto Sans';
+} 
+
+.header-dashboard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+    height: 100px;
+}
+
+.nav-dashboard a, .return-button-form{
+    border: 3px solid #FFF;
+    background: #FF6000;
+    color: #000;
+    padding:10px 14px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+    
+}
+
+.main-dashboard {
+    background-color:#CF0A0A ;
+    padding:50px;
+}
+
+.orange-bg{
+    background-color: #FF6000;
+    font-size: 26px;
+    border: 2px solid white;
+
+}
+
+.table-history {
+    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.button-table {
+    background-color: #9CF89E;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.lign-table {
+    background-color: #FFA559;
+    
+}
+
+.lign-table td{
+    padding: 10px;
+    border: 2px solid white;
+}
+
+.button-column {
+    background-color: #CF0A0A;
+    border: none !important;
+}
+
+.button-table {
+    cursor: pointer;
+}
+
+.history-filter_container {
+    position: relative;
+    border-radius: 22px;
+    border: 4px solid #FFF;
+    background: #454545;
+    padding:10px;
+    color:white;
+    font-family: 'Noto Sans';
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+#delete-button {
+    background-color: #CF0A0A;
+    color: white;
+}

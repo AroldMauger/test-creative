@@ -17,7 +17,42 @@
         <script src="https://kit.fontawesome.com/70fabb1b7e.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        
+        <header class="header-dashboard">
+            <nav class="nav-dashboard">
+                <a href="/new_progress">Nouveau progrès</a>
+            </nav>
+        </header>
+        <main class="main-dashboard">
+            <div class="history-filter_container">
+                <span>Mes progrès en développement web</span>
+            </div>
+                <table class="table-history">
+                    <thead>
+                        <tr>
+                            <th class="orange-bg">DATE</th>
+                            <th class="orange-bg">TECHNOLOGIE</th>
+                            <th class="orange-bg">DESCRIPTION</th>
+                            <th class="orange-bg">ACTIONS</th>
+                            <th class="button-column"></th> 
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for prog in progress %}
+                        <tr class="lign-table">
+                            <td>{{ prog.date|date('d/m/Y') }}</td>
+                            <td>{{ prog.techno }}</td>
+                            <td>{{ prog.description }}</td>
+                            <td class="buttons-container">
+                                <button class="button-table" id="modify-button">Modifier</button>
+                                <button class="button-table" id="delete-button">Supprimer</button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                        
+        </main>
+                    
     </body>
 
 </html>
