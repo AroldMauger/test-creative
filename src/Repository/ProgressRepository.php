@@ -20,29 +20,24 @@ class ProgressRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Progress::class);
     }
+    public function save(Progress $progress): bool
+    {
+        try {
+            $em = $this->getEntityManager();
+            $em->persist($progress);
+            $em->flush();
 
-    //    /**
-    //     * @return Progress[] Returns an array of Progress objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('p')
-    //            ->andWhere('p.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('p.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+            return true;
+        } catch (\Exception $exception) {
+            return false;
+        }
+    }
+    public function findAllData()
+    {
+        return $this->createQueryBuilder('a')
+            ->select('a')
+            ->getQuery()
+            ->getResult();
+    }
 
-    //    public function findOneBySomeField($value): ?Progress
-    //    {
-    //        return $this->createQueryBuilder('p')
-    //            ->andWhere('p.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
 }
