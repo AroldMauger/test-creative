@@ -32,12 +32,6 @@ class ProgressRepository extends ServiceEntityRepository
             return false;
         }
     }
-    public function findAllData()
-    {
-        return $this->createQueryBuilder('a')
-            ->select('a')
-            ->getQuery()
-            ->getResult();
-    }
+
 
 }

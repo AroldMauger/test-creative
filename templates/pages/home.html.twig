@@ -43,8 +43,14 @@
                             <td>{{ prog.techno }}</td>
                             <td>{{ prog.description }}</td>
                             <td class="buttons-container">
-                                <button class="button-table" id="modify-button">Modifier</button>
-                                <button class="button-table" id="delete-button">Supprimer</button>
+
+                                <a href="{{ url("modifyprogress", {"id":prog.id }) }}">
+                                    <button class="button-table" id="modify-button">Modifier</button>
+                                </a>
+
+                                <a href="{{ url("deleteprogress", {"id":prog.id }) }}">
+                                    <button class="button-table" id="delete-button">Supprimer</button>
+                                </a>
                             </td>
                         </tr>
                         {% endfor %}
