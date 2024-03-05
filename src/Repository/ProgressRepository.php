@@ -32,6 +32,17 @@ class ProgressRepository extends ServiceEntityRepository
             return false;
         }
     }
+    public function delete(Progress $progress): bool
+    {
+        try {
+            $em = $this->getEntityManager();
+            $em->remove($progress);
+            $em->flush();
 
+            return true;
+        } catch (\Exception $exception) {
+            return false;
+        }
+    }
 
 }

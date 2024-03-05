@@ -36,6 +36,12 @@ class HomeController extends AbstractController
         return $this->render("pages/new_progress.html.twig", ["form" => $form->createView()]);
     }
 
- 
+    #[Route('/deleteprogress/{id}', name: "deleteprogress")]
+    public function deleteProgress(#[MapEntity(id:"id")] Progress $progress, ProgressRepository $repo)
+    {
+        $repo->delete($progress);
+        return $this->redirectToRoute("home");
+    }
+
 }
 
