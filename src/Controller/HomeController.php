@@ -43,5 +43,16 @@ class HomeController extends AbstractController
         return $this->redirectToRoute("home");
     }
 
+    #[Route('/modifyprogress/{id}', name: "modifyprogress")]
+    public function modifyProgress(#[MapEntity(id:"id")] Progress $progress, ProgressRepository $repo, Request $request)
+    {
+        $form = $this->createForm(ModifyProgressType::class, $progress);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $progress = $form->getData();
+            $repo->save($progress);
+            return $this->redirectToRoute("home");
+        }
+        return $this->render("pages/new_progress.html.twig", ["form" => $form->createView()]);    }
 }
 
