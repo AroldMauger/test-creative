@@ -53,6 +53,6 @@ class HomeController extends AbstractController
             $repo->save($progress);
             return $this->redirectToRoute("home");
         }
-        return $this->render("pages/new_progress.html.twig", ["form" => $form->createView()]);    }
+        return $this->render("pages/modify_progress.html.twig", ["form" => $form->createView()]);    }
 }
 

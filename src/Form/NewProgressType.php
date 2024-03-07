@@ -16,11 +16,24 @@ class NewProgressType extends AbstractType
         $builder
             ->add('date', null, [
                 'widget' => 'single_text',
+                'attr' => [
+                    'class' => 'input-in-form',
+                    'id' => 'form-date'
+                ]
             ])
             ->add('techno', ChoiceType::class, [
-                'choices' => ["Javascript"=>"Javascript", "CSS"=>"CSS", "PHP"=>"PHP", "Symfony"=>"Symfony", "Laravel"=>"Laravel", "Android"=>"Android", "React"=>"React", "SQL"=>"SQL"]
+                'choices' => ["Javascript"=>"Javascript", "CSS"=>"CSS", "PHP"=>"PHP", "Symfony"=>"Symfony", "Laravel"=>"Laravel", "Android"=>"Android", "React"=>"React", "SQL"=>"SQL"],
+                'attr' => [
+                    'class' => 'input-in-form',
+                    'id' => 'form-techno'
+                ]
             ])
-            ->add('description', TextType::class)
+            ->add('description', TextType::class, [
+                'attr' => [
+                    'class' => 'input-in-form',
+                    'id' => 'form-description'
+                ]
+            ])
         ;
     }
 
