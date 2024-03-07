@@ -67,10 +67,6 @@ body {
     background-color: #f9f9f9; 
 }
 
-.buttons-container {
-    display: flex;
-    gap: 0.5rem;
-}
 
 .button-table {
     background-color: #2ecc71;
@@ -85,9 +81,20 @@ body {
 .button-table:hover {
     background-color: #27ae60;
 }
-
+a {
+    text-decoration: none;
+}
 #delete-button {
+    font-size: small;
     background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    margin-left: 10px;
 }
 
 #delete-button:hover {
@@ -98,10 +105,9 @@ body {
     width: 150px;
 }
 
-.header-table {
-    text-align: center !important;
+.buttons-container {
+    width: 20%;
 }
-
 
 /* new_progress.html */
 

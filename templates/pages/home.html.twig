@@ -47,9 +47,8 @@
                                     <button class="button-table" id="modify-button">Modifier</button>
                                 </a>
 
-                                <a href="{{ url("deleteprogress", {"id":prog.id }) }}">
-                                    <button class="button-table" id="delete-button">Supprimer</button>
-                                </a>
+                                <a href="{{ path('deleteprogress', {'id': prog.id }) }}" id="delete-button" onclick="return confirmDelete(event)">Supprimer</a>
+
                             </td>
                         </tr>
                         {% endfor %}
@@ -59,5 +58,5 @@
         </main>
                     
     </body>
-
+    <script src="script.js"></script>
 </html>
